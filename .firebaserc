@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "next-image-hash-app"
+  },
+  "targets": {
+    "chui-app-io": {
+      "hosting": {
+        "next-image-hash-app": [
+          "next-image-hash"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -1,0 +1,272 @@
+/* global page styling */
+.image-hash-body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0px 5%;
+  box-sizing: border-box;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  overflow-x: hidden;
+}
+
+/* Header styling */
+.image-hash-body .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.image-hash-body .header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Main body styling */
+.image-hash-body .hash-body {
+  width: 100%;
+  height: fit-content;
+  padding: 20px 0px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.image-hash-body .hash-body .upload-hash {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  text-align: left;
+}
+
+.image-hash-body .hash-body .upload-hash h2 {
+  max-width: 600px;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.image-hash-body .hash-body .upload-hash p {
+  max-width: 600px;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.image-hash-body .hash-body .upload-hash input[type="text"] {
+  max-width: 600px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.image-hash-body .hash-body .upload-hash input[type="file"] {
+  max-width: 600px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #45ACAB;
+  color: white;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.image-hash-body .hash-body .upload-hash button {
+  max-width: 600px;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #163341;
+  color: 45ACAB;
+  font-size: 1rem;
+  font-weight: 300;
+  border: solid 2px #45ACAB;
+}
+
+.image-hash-body .hash-body .upload-hash button:hover {
+  background-color: #45ACAB;
+  color: white;
+  box-shadow: 0px 0px 10px 0px #45ACAB;
+}
+
+.image-hash-body .hash-body .upload-hash .error-message {
+  max-width: 600px;
+  font-size: .8rem;
+  font-weight: 300;
+  color: red;
+}
+
+.image-hash-body .hash-body .view-hash {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  text-align: left;
+}
+
+.image-hash-body .hash-body .view-hash .view-hash-header,
+.image-hash-body .hash-body .view-hash .view-hash-footer {
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-hash-body .hash-body .view-hash .view-hash-header p,
+.image-hash-body .hash-body .view-hash .view-hash-footer p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.image-hash-body .hash-body .view-hash .view-hash-header button,
+.image-hash-body .hash-body .view-hash .view-hash-footer button {
+  width: 100px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #45ACAB;
+  color: white;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.image-hash-body .hash-body .view-hash .view-hash-header button:hover,
+.image-hash-body .hash-body .view-hash .view-hash-footer button:hover {
+  box-shadow: 0px 0px 10px 0px #45ACAB;
+}
+
+.image-hash-body .hash-body .view-hash .view-hash-image {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-hash-body .hash-body .view-hash .view-hash-image img {
+  width: auto;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.image-hash-body .hash-body .view-hash .view-hash-image .imagePlacholder {
+  border: #45ACAB 2px dashed;
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.image-hash-body .hash-body .view-hash .view-hash-image .imagePlacholder p {
+  font-size: .7rem;
+  font-weight: 200;
+}
+
+.image-hash-body .hash-body .view-hash .new-image-hash {
+  max-width: 50%;
+  height: 100%;
+  font-size: .8rem;
+  font-weight: 200px;
+  text-align: left;
+  word-wrap: break-word!important;
+}
+
+/* Footer styling */
+.image-hash-body .footer {
+  font-size: .7rem;
+  font-weight: 200;
+  padding: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-hash-body .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .image-hash-body .hash-body {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .image-hash-body .hash-body .upload-hash,
+  .image-hash-body .hash-body .view-hash {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .image-hash-body .hash-body .upload-hash h2,
+  .image-hash-body .hash-body .view-hash h2 {
+    font-size: 2.5rem;
+  }
+
+  .image-hash-body .hash-body .upload-hash p,
+  .image-hash-body .hash-body .view-hash p {
+    font-size: 1rem;
+  }
+
+  .image-hash-body .hash-body .upload-hash input[type="text"],
+  .image-hash-body .hash-body .upload-hash input[type="file"],
+  .image-hash-body .hash-body .upload-hash button {
+    max-width: 100%;
+  }
+
+  .image-hash-body .hash-body .view-hash .view-hash-image img {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-hash-body .header h1 {
+    font-size: 1.25rem;
+  }
+
+  .image-hash-body .hash-body .upload-hash h2,
+  .image-hash-body .hash-body .view-hash h2 {
+    font-size: 2rem;
+  }
+
+  .image-hash-body .hash-body .upload-hash p,
+  .image-hash-body .hash-body .view-hash p {
+    font-size: 0.9rem;
+  }
+
+  .image-hash-body .hash-body .upload-hash input[type="text"],
+  .image-hash-body .hash-body .upload-hash input[type="file"],
+  .image-hash-body .hash-body .upload-hash button {
+    font-size: 0.9rem;
+  }
+
+  .image-hash-body .footer {
+    font-size: 0.6rem;
+  }
+}
