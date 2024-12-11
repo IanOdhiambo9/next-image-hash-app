@@ -5,17 +5,21 @@ import { useState } from 'react';
 
 import { hashImageProvider } from './utils/hash-image.provider';
 
+import { useImageHashStore } from './stores/image-hash.store';
+
 import './page.css';
 import './assets/image-icon.png';
 
 export default function NextImageHashApp() {
+  // Initiate state for the app
+  const adjustedImageUrl = useImageHashStore((state) => state.adjustedImageUrl);
+  const adjustedImageHash = useImageHashStore((state) => state.adjustedImageHash);
+
 
   // Track the hextstring input & file selection
   const [targetHexstring, setTargetHexstring] = useState<string>("");
   const [adjustedImageName, setAdjustedImageName] = useState<string>("");
   const [selectedHashFile, setSelectedHashFile] = useState<null | File>(null);
-
-  const [hashedImageUrl, setHashedImageUrl] = useState<{ imageUrl: string, hash: string }>({ imageUrl: "", hash: "" });
 
   // Track the loading state & error message for the UI
   // Use these to show a loading spinner and error message
@@ -59,24 +63,29 @@ export default function NextImageHashApp() {
       return;
     }
 
-    setHashedImageUrl(hashedImageUrlRes.result);
+    // Update the image hash store with the new image hash
+    useImageHashStore.setState({ 
+      adjustedImageUrl: hashedImageUrlRes.result.imageUrl,
+      adjustedImageHash: hashedImageUrlRes.result.hash
+    });
+
     setErrorMessage("");
     setIsHashingImage(false);
   };
 
   // Copy the hash to the clipboard
   const copyHash = () => {
-    if (hashedImageUrl.hash.length > 0) {
-      navigator.clipboard.writeText(hashedImageUrl.hash);
+    if (adjustedImageUrl.length > 0) {
+      navigator.clipboard.writeText(adjustedImageHash);
       alert("Hash copied to clipboard!");
     }
   };
 
   // Download the hashed image
   const downloadHashedImage = () => {
-    if (hashedImageUrl.imageUrl.length > 0) {
+    if (adjustedImageUrl.length > 0) {
       const link = document.createElement('a');
-      link.href = hashedImageUrl.imageUrl;
+      link.href = adjustedImageUrl;
       link.setAttribute('download', `${adjustedImageName}.jpg`);
       document.body.appendChild(link);
       link.click();
@@ -120,8 +129,8 @@ export default function NextImageHashApp() {
             <button onClick={downloadHashedImage}> Download </button>
           </div>
           <div className="view-hash-image">
-            {hashedImageUrl.imageUrl.length > 0 ? (
-              <img src={hashedImageUrl.imageUrl} alt="hashed image" />
+            {adjustedImageUrl.length > 0 ? (
+              <img src={adjustedImageUrl} alt="hashed image" />
             ) : (
               <div className="imagePlacholder">
                 <p> Hashed image appears here. </p>
@@ -134,7 +143,7 @@ export default function NextImageHashApp() {
           </div>
 
           <p className="new-image-hash">
-            { hashedImageUrl.hash.length > 0 ? hashedImageUrl.hash : '- No image hashed -'}
+            { adjustedImageHash.length > 0 ? adjustedImageHash : '- No image hashed -'}
           </p>
         </div>
       </div>
