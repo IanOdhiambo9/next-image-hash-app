@@ -42,3 +42,4 @@ next-env.d.ts
 /public
 functions/package-lock.json
 package-lock.json
+firebase-debug.log
