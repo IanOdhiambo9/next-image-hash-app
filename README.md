@@ -34,7 +34,7 @@ The app's design journey began with wireframes and mockups created in Figma. The
 - Easy navigation for users.
 - Accessibility and responsiveness across all devices.
 
-![Figma protoype link](https://www.figma.com/proto/6c0JUhLoIl7TmPfZcYsLi6/Image-Hash-Web?node-id=0-1&t=fyeYYoeerCU26lwW-1)
+[Figma prototype link](https://www.figma.com/proto/6c0JUhLoIl7TmPfZcYsLi6/Image-Hash-Web?node-id=0-1&t=fyeYYoeerCU26lwW-1)
 
 
 ### **Design Highlights**
